@@ -1,0 +1,17 @@
+/Users/helena.franczak/RiderProjects/CoffeeMachine/CoffeMachineTests/bin/Debug/netcoreapp2.2/NUnit3.TestAdapter.dll
+/Users/helena.franczak/RiderProjects/CoffeeMachine/CoffeMachineTests/bin/Debug/netcoreapp2.2/NUnit3.TestAdapter.pdb
+/Users/helena.franczak/RiderProjects/CoffeeMachine/CoffeMachineTests/bin/Debug/netcoreapp2.2/nunit.engine.netstandard.dll
+/Users/helena.franczak/RiderProjects/CoffeeMachine/CoffeMachineTests/bin/Debug/netcoreapp2.2/CoffeMachineTests.deps.json
+/Users/helena.franczak/RiderProjects/CoffeeMachine/CoffeMachineTests/bin/Debug/netcoreapp2.2/CoffeMachineTests.runtimeconfig.json
+/Users/helena.franczak/RiderProjects/CoffeeMachine/CoffeMachineTests/bin/Debug/netcoreapp2.2/CoffeMachineTests.runtimeconfig.dev.json
+/Users/helena.franczak/RiderProjects/CoffeeMachine/CoffeMachineTests/bin/Debug/netcoreapp2.2/CoffeMachineTests.dll
+/Users/helena.franczak/RiderProjects/CoffeeMachine/CoffeMachineTests/bin/Debug/netcoreapp2.2/CoffeMachineTests.pdb
+/Users/helena.franczak/RiderProjects/CoffeeMachine/CoffeMachineTests/bin/Debug/netcoreapp2.2/CoffeeMachine.dll
+/Users/helena.franczak/RiderProjects/CoffeeMachine/CoffeMachineTests/bin/Debug/netcoreapp2.2/CoffeeMachine.pdb
+/Users/helena.franczak/RiderProjects/CoffeeMachine/CoffeMachineTests/obj/Debug/netcoreapp2.2/CoffeMachineTests.csprojAssemblyReference.cache
+/Users/helena.franczak/RiderProjects/CoffeeMachine/CoffeMachineTests/obj/Debug/netcoreapp2.2/CoffeMachineTests.csproj.CoreCompileInputs.cache
+/Users/helena.franczak/RiderProjects/CoffeeMachine/CoffeMachineTests/obj/Debug/netcoreapp2.2/CoffeMachineTests.AssemblyInfoInputs.cache
+/Users/helena.franczak/RiderProjects/CoffeeMachine/CoffeMachineTests/obj/Debug/netcoreapp2.2/CoffeMachineTests.AssemblyInfo.cs
+/Users/helena.franczak/RiderProjects/CoffeeMachine/CoffeMachineTests/obj/Debug/netcoreapp2.2/CoffeMachineTests.csproj.CopyComplete
+/Users/helena.franczak/RiderProjects/CoffeeMachine/CoffeMachineTests/obj/Debug/netcoreapp2.2/CoffeMachineTests.dll
+/Users/helena.franczak/RiderProjects/CoffeeMachine/CoffeMachineTests/obj/Debug/netcoreapp2.2/CoffeMachineTests.pdb
