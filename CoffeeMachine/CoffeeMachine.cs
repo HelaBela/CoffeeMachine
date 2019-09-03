@@ -8,11 +8,12 @@ namespace CoffeeMachine
         public int CoffeeBeans { get; set; }
         public double Water { get; set; }
         public double Milk { get; set; }
+        public int Chocolate { get; set; }
 
         public bool Power { get; }
 
         //public  Drink Menu { get; }
-        public int Chocolate { get; set; }
+
 
         public CoffeeMachine(bool power, int coffeeBeans, double water, double milk, int chocolate)
         {
@@ -33,6 +34,7 @@ namespace CoffeeMachine
             {
                 throw new Exception("come back later. no power");
             }
+            
 
             if (Water >= 0.3 && CoffeeBeans >= 12 && Milk >= 0.1 && Chocolate>=1)
             {
@@ -53,15 +55,18 @@ namespace CoffeeMachine
         {
             if (drinkTypes == DrinkTypes.Capp)
             {
-                // var cappMaker = new CappMAker();
-                                     // var recipe = cappMaker.getRecipe()
-                                    // check if you have enough ingredients for the recipe -
-                                  // if yes, then make, else, 
-                    // cappMaker.make(coffeeBeans, water, milk, choc)
+                var cappMaker = new CapMaker();
+                
+                                      //  var cappMaker = new CapMaker();
+                                     //  var recipe = cappMaker.getRecipe()
+                                    //  check if you have enough ingredients for the recipe -
+                                   //  if yes, then make, else, 
+                                   
 
                 if (GetMenu().Contains(DrinkTypes.Capp))
                 {
-                    var cap = new Capp();
+                    var recipe = cappMaker.CappRecepie;  
+                    var cap = cappMaker.Make(recipe);
                     Water -= 0.3;
                     CoffeeBeans -= 12;
                     Chocolate -= 1;
@@ -74,10 +79,12 @@ namespace CoffeeMachine
             
             if (drinkTypes == DrinkTypes.Latte)
             {
+                var latteMaker = new LatteMaker();
 
                 if (GetMenu().Contains(DrinkTypes.Latte))
                 {
-                    var latte = new Latte();
+                    var recipe = latteMaker.LatteRecipe;
+                    var latte = latteMaker.Make(recipe);
                     Water -= 0.2;
                     CoffeeBeans -= 12;
                     Milk -= 0.2;
@@ -90,5 +97,14 @@ namespace CoffeeMachine
 
             return null;
         }
+
+        public void DeductResourcesAfterCoffeeIsDone(Recipe recipe)
+        {
+            Water -= recipe.Water;
+            CoffeeBeans -= recipe.CoffeeBeans;
+            Milk -= recipe.Milk;
+            
+        }
+
     }
 }

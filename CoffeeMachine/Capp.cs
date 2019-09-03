@@ -6,21 +6,5 @@ namespace CoffeeMachine
         {
             return "Yummy Cappucino";
         }
-        
-        
-
     }
 }
-
-
-/*
-
-interface IPen
-{
-    string Color { get; set; }
-    bool Open();
-    bool Close();
-    void Write(string text);
-}
-
-*/

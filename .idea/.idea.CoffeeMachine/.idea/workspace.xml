@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f4a746ec-5ec1-484b-8cb9-b4bbb3e4690d" name="Default Changelist" comment="" />
+    <list default="true" id="f4a746ec-5ec1-484b-8cb9-b4bbb3e4690d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/CoffeeMachine/CapMaker.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CoffeeMachine/LatteMaker.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CoffeeMachine/Recipe.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CoffeeMachine/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CoffeeMachine/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CoffeeMachine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CoffeeMachine/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoffeMachineTests/bin/Debug/netcoreapp2.2/CoffeeMachine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CoffeMachineTests/bin/Debug/netcoreapp2.2/CoffeeMachine.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoffeMachineTests/bin/Debug/netcoreapp2.2/CoffeeMachine.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CoffeMachineTests/bin/Debug/netcoreapp2.2/CoffeeMachine.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoffeMachineTests/bin/Debug/netcoreapp2.2/nunit_random_seed.tmp" beforeDir="false" afterPath="$PROJECT_DIR$/CoffeMachineTests/bin/Debug/netcoreapp2.2/nunit_random_seed.tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoffeMachineTests/obj/Debug/netcoreapp2.2/CoffeMachineTests.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CoffeMachineTests/obj/Debug/netcoreapp2.2/CoffeMachineTests.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoffeeMachine/Beverage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CoffeeMachine/Beverage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoffeeMachine/Capp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CoffeeMachine/Capp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoffeeMachine/CoffeeMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CoffeeMachine/CoffeeMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoffeeMachine/DrinkMaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CoffeeMachine/DrinkMaker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoffeeMachine/bin/Debug/netcoreapp2.2/CoffeeMachine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CoffeeMachine/bin/Debug/netcoreapp2.2/CoffeeMachine.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoffeeMachine/bin/Debug/netcoreapp2.2/CoffeeMachine.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CoffeeMachine/bin/Debug/netcoreapp2.2/CoffeeMachine.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoffeeMachine/obj/Debug/netcoreapp2.2/CoffeeMachine.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CoffeeMachine/obj/Debug/netcoreapp2.2/CoffeeMachine.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoffeeMachine/obj/Debug/netcoreapp2.2/CoffeeMachine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CoffeeMachine/obj/Debug/netcoreapp2.2/CoffeeMachine.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoffeeMachine/obj/Debug/netcoreapp2.2/CoffeeMachine.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CoffeeMachine/obj/Debug/netcoreapp2.2/CoffeeMachine.pdb" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,16 +42,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CoffeeMachine/Beverage.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="30">
+              <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
               <folding>
-                <marker date="1567478605702" expanded="true" signature="23:456" ph="{...}" />
-                <marker date="1567478605702" expanded="true" signature="73:454" ph="{...}" />
-                <marker date="1567478605702" expanded="true" signature="117:160" ph="{...}" />
-                <marker date="1567478605702" expanded="true" signature="372:448" ph="{...}" />
+                <marker date="1567483501249" expanded="true" signature="23:155" ph="{...}" />
+                <marker date="1567483501249" expanded="true" signature="60:153" ph="{...}" />
+                <marker date="1567483501249" expanded="true" signature="104:147" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -41,38 +59,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CoffeeMachine/Capp.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+            <state relative-caret-position="105">
+              <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
               <folding>
-                <marker date="1567478605704" expanded="true" signature="23:189" ph="{...}" />
-                <marker date="1567478605704" expanded="true" signature="59:187" ph="{...}" />
-                <marker date="1567478605704" expanded="true" signature="104:162" ph="{...}" />
-                <marker date="1567478605704" expanded="true" signature="192:313" ph="/* interface IPen ... */" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CoffeeMachine/CoffeeMachine.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="42" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="42" />
-              <folding>
-                <marker date="1567476949159" expanded="true" signature="6:47" ph="..." />
-                <marker date="1567476949159" expanded="true" signature="72:2541" ph="{...}" />
-                <marker date="1567476949159" expanded="true" signature="105:2539" ph="{...}" />
-                <marker date="1567476949159" expanded="true" signature="458:674" ph="{...}" />
-                <marker date="1567476949159" expanded="true" signature="717:1253" ph="{...}" />
-                <marker date="1567476949159" expanded="true" signature="805:899" ph="{...}" />
-                <marker date="1567476949159" expanded="true" signature="982:1053" ph="{...}" />
-                <marker date="1567476949159" expanded="true" signature="1132:1204" ph="{...}" />
-                <marker date="1567476949159" expanded="true" signature="1323:2533" ph="{...}" />
-                <marker date="1567476949159" expanded="true" signature="1380:2093" ph="{...}" />
-                <marker date="1567476949159" expanded="true" signature="1411:1747" ph="/* var cappMaker = new CappMAker(); ... */" />
-                <marker date="1567476949159" expanded="true" signature="1805:2079" ph="{...}" />
-                <marker date="1567476949159" expanded="true" signature="2154:2484" ph="{...}" />
-                <marker date="1567476949159" expanded="true" signature="2227:2470" ph="{...}" />
+                <marker date="1567483501251" expanded="true" signature="23:170" ph="{...}" />
+                <marker date="1567483501251" expanded="true" signature="59:168" ph="{...}" />
+                <marker date="1567483501251" expanded="true" signature="104:162" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -81,44 +73,79 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CoffeeMachine/DrinkMaker.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="45">
+              <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
               <folding>
-                <marker date="1567478226303" expanded="true" signature="23:242" ph="{...}" />
-                <marker date="1567478226303" expanded="true" signature="58:240" ph="{...}" />
+                <marker date="1567487696856" expanded="true" signature="23:117" ph="{...}" />
+                <marker date="1567487696856" expanded="true" signature="58:115" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CoffeeMachine/Latte.cs">
+        <entry file="file://$PROJECT_DIR$/CoffeeMachine/CoffeeMachine.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+            <state relative-caret-position="1025">
+              <caret line="85" column="55" selection-start-line="85" selection-start-column="33" selection-end-line="85" selection-end-column="55" />
               <folding>
-                <marker date="1567476949154" expanded="true" signature="23:168" ph="{...}" />
-                <marker date="1567476949154" expanded="true" signature="58:166" ph="{...}" />
-                <marker date="1567476949154" expanded="true" signature="104:160" ph="{...}" />
+                <marker date="1567489387232" expanded="true" signature="6:47" ph="..." />
+                <marker date="1567489387232" expanded="true" signature="72:3020" ph="{...}" />
+                <marker date="1567489387232" expanded="true" signature="105:3018" ph="{...}" />
+                <marker date="1567489387232" expanded="true" signature="459:675" ph="{...}" />
+                <marker date="1567489387232" expanded="true" signature="718:1267" ph="{...}" />
+                <marker date="1567489387232" expanded="true" signature="806:900" ph="{...}" />
+                <marker date="1567489387232" expanded="true" signature="996:1067" ph="{...}" />
+                <marker date="1567489387232" expanded="true" signature="1146:1218" ph="{...}" />
+                <marker date="1567489387232" expanded="true" signature="1337:2794" ph="{...}" />
+                <marker date="1567489387232" expanded="true" signature="1394:2234" ph="{...}" />
+                <marker date="1567489387232" expanded="true" signature="1512:1782" ph="/* var cappMaker = new CapMaker(); ... */" />
+                <marker date="1567489387232" expanded="true" signature="1876:2220" ph="{...}" />
+                <marker date="1567489387232" expanded="true" signature="2295:2745" ph="{...}" />
+                <marker date="1567489387232" expanded="true" signature="2419:2731" ph="{...}" />
+                <marker date="1567489387232" expanded="true" signature="2863:3011" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CoffeeMachine/Program.cs">
+        <entry file="file://$PROJECT_DIR$/CoffeeMachine/LatteMaker.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="58" selection-start-line="26" selection-start-column="58" selection-end-line="26" selection-end-column="58" />
+            <state relative-caret-position="195">
+              <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
               <folding>
-                <marker date="1567475156170" expanded="true" signature="38:1706" ph="{...}" />
-                <marker date="1567475156170" expanded="true" signature="58:1704" ph="{...}" />
-                <marker date="1567475156170" expanded="true" signature="104:1698" ph="{...}" />
-                <marker date="1567475156170" expanded="true" signature="255:939" ph="{...}" />
-                <marker date="1567475156170" expanded="true" signature="457:821" ph="{...}" />
-                <marker date="1567475156170" expanded="true" signature="842:925" ph="{...}" />
-                <marker date="1567475156170" expanded="true" signature="942:1688" ph="..." />
-                <marker date="1567475156170" expanded="true" signature="943:1688" ph="/* if (Int32.TryParse(answer, out int theChoice)) ... */" />
+                <marker date="1567489193843" expanded="true" signature="23:283" ph="{...}" />
+                <marker date="1567489193843" expanded="true" signature="67:281" ph="{...}" />
+                <marker date="1567489193843" expanded="true" signature="168:275" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CoffeeMachine/CapMaker.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+              <folding>
+                <marker date="1567489193846" expanded="true" signature="23:306" ph="{...}" />
+                <marker date="1567489193846" expanded="true" signature="65:304" ph="{...}" />
+                <marker date="1567489193846" expanded="true" signature="165:285" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CoffeeMachine/Recipe.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+              <folding>
+                <marker date="1567488606612" expanded="true" signature="23:485" ph="{...}" />
+                <marker date="1567488606612" expanded="true" signature="49:483" ph="{...}" />
+                <marker date="1567488606612" expanded="true" signature="317:476" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -127,7 +154,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CoffeMachineTests/UnitTest1.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1740">
+            <state relative-caret-position="1592">
               <caret line="116" column="8" lean-forward="true" selection-start-line="116" selection-start-column="8" selection-end-line="116" selection-end-column="8" />
               <folding>
                 <marker date="1567467998507" expanded="true" signature="6:57" ph="..." />
@@ -152,17 +179,41 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CoffeeMachine/Program.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" column="20" lean-forward="true" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+              <folding>
+                <marker date="1567489790982" expanded="true" signature="38:1706" ph="{...}" />
+                <marker date="1567489790982" expanded="true" signature="58:1704" ph="{...}" />
+                <marker date="1567489790982" expanded="true" signature="104:1698" ph="{...}" />
+                <marker date="1567489790982" expanded="true" signature="255:939" ph="{...}" />
+                <marker date="1567489790982" expanded="true" signature="457:821" ph="{...}" />
+                <marker date="1567489790982" expanded="true" signature="842:925" ph="{...}" />
+                <marker date="1567489790982" expanded="true" signature="943:1688" ph="/* if (Int32.TryParse(answer, out int theChoice)) ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/CoffeeMachine/Latte.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CoffeeMachine/LatteMaker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CoffeeMachine/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CoffeeMachine/Capp.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CoffeeMachine/CoffeeMachine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CoffeeMachine/Beverage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CoffeMachineTests/UnitTest1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CoffeeMachine/DrinkMaker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CoffeeMachine/CapMaker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CoffeeMachine/DrinkTypes.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CoffeeMachine/Recipe.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -173,21 +224,33 @@
         <option value="$PROJECT_DIR$/CoffeeMachine/Drink.cs" />
         <option value="$PROJECT_DIR$/CoffeeMachine/DrinkTypes.cs" />
         <option value="$PROJECT_DIR$/CoffeMachineTests/UnitTest1.cs" />
-        <option value="$PROJECT_DIR$/CoffeeMachine/Program.cs" />
         <option value="$PROJECT_DIR$/CoffeeMachine/Latte.cs" />
-        <option value="$PROJECT_DIR$/CoffeeMachine/CoffeeMachine.cs" />
-        <option value="$PROJECT_DIR$/CoffeeMachine/DrinkMaker.cs" />
         <option value="$PROJECT_DIR$/CoffeeMachine/Beverage.cs" />
         <option value="$PROJECT_DIR$/CoffeeMachine/Capp.cs" />
+        <option value="$PROJECT_DIR$/CoffeeMachine/Recepie.cs" />
+        <option value="$PROJECT_DIR$/CoffeeMachine/DrinkMaker.cs" />
+        <option value="$PROJECT_DIR$/CoffeeMachine/Recipe.cs" />
+        <option value="$PROJECT_DIR$/CoffeeMachine/CapMaker.cs" />
+        <option value="$PROJECT_DIR$/CoffeeMachine/LatteMaker.cs" />
+        <option value="$PROJECT_DIR$/CoffeeMachine/CoffeeMachine.cs" />
+        <option value="$PROJECT_DIR$/CoffeeMachine/Program.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/.idea.CoffeeMachine/.idea/vcs.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-712" />
-    <option name="y" value="-1417" />
-    <option name="width" value="2063" />
-    <option name="height" value="1337" />
+    <option name="x" value="-604" />
+    <option name="y" value="-1391" />
+    <option name="width" value="2242" />
+    <option name="height" value="1225" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="SolutionExplorer" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -263,12 +326,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1567380118873</updated>
-      <workItem from="1567380120070" duration="26823000" />
+      <workItem from="1567380120070" duration="35606000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26823000" />
+    <option name="totallyTimeSpent" value="35606000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -280,24 +343,24 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="11" y="-1392" width="2063" height="1337" extended-state="0" />
+    <frame x="-259" y="-1400" width="2242" height="1225" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20237507" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18590909" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="NuGet" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Unit Tests" weight="0.22891566" />
+      <window_info anchor="bottom" id="Unit Tests" weight="0.35261044" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Build" weight="0.32771084" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.23534137" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39859593" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23534137" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.20211826" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -321,13 +384,62 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/CoffeeMachine/CoffeeMachine.cs</url>
+          <line>92</line>
+          <properties documentPath="$PROJECT_DIR$/CoffeeMachine/CoffeeMachine.cs" initialLine="92">
+            <startOffsets>
+              <option value="2700" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2713" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/CoffeeMachine/Latte.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding>
+            <marker date="1567476949154" expanded="true" signature="23:168" ph="{...}" />
+            <marker date="1567476949154" expanded="true" signature="58:166" ph="{...}" />
+            <marker date="1567476949154" expanded="true" signature="104:160" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CoffeeMachine/Recipe.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+          <folding>
+            <marker date="1567488606612" expanded="true" signature="23:485" ph="{...}" />
+            <marker date="1567488606612" expanded="true" signature="49:483" ph="{...}" />
+            <marker date="1567488606612" expanded="true" signature="317:476" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CoffeeMachine/CapMaker.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+          <folding>
+            <marker date="1567489193846" expanded="true" signature="23:306" ph="{...}" />
+            <marker date="1567489193846" expanded="true" signature="65:304" ph="{...}" />
+            <marker date="1567489193846" expanded="true" signature="165:285" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CoffeMachineTests/UnitTest1.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1740">
+        <state relative-caret-position="1592">
           <caret line="116" column="8" lean-forward="true" selection-start-line="116" selection-start-column="8" selection-end-line="116" selection-end-column="8" />
           <folding>
             <marker date="1567467998507" expanded="true" signature="6:57" ph="..." />
@@ -351,35 +463,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CoffeeMachine/Program.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="58" selection-start-line="26" selection-start-column="58" selection-end-line="26" selection-end-column="58" />
-          <folding>
-            <marker date="1567475156170" expanded="true" signature="38:1706" ph="{...}" />
-            <marker date="1567475156170" expanded="true" signature="58:1704" ph="{...}" />
-            <marker date="1567475156170" expanded="true" signature="104:1698" ph="{...}" />
-            <marker date="1567475156170" expanded="true" signature="255:939" ph="{...}" />
-            <marker date="1567475156170" expanded="true" signature="457:821" ph="{...}" />
-            <marker date="1567475156170" expanded="true" signature="842:925" ph="{...}" />
-            <marker date="1567475156170" expanded="true" signature="942:1688" ph="..." />
-            <marker date="1567475156170" expanded="true" signature="943:1688" ph="/* if (Int32.TryParse(answer, out int theChoice)) ... */" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CoffeeMachine/Latte.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-          <folding>
-            <marker date="1567476949154" expanded="true" signature="23:168" ph="{...}" />
-            <marker date="1567476949154" expanded="true" signature="58:166" ph="{...}" />
-            <marker date="1567476949154" expanded="true" signature="104:160" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CoffeeMachine/DrinkTypes.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -391,62 +474,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CoffeeMachine/CoffeeMachine.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="42" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="42" />
-          <folding>
-            <marker date="1567476949159" expanded="true" signature="6:47" ph="..." />
-            <marker date="1567476949159" expanded="true" signature="72:2541" ph="{...}" />
-            <marker date="1567476949159" expanded="true" signature="105:2539" ph="{...}" />
-            <marker date="1567476949159" expanded="true" signature="458:674" ph="{...}" />
-            <marker date="1567476949159" expanded="true" signature="717:1253" ph="{...}" />
-            <marker date="1567476949159" expanded="true" signature="805:899" ph="{...}" />
-            <marker date="1567476949159" expanded="true" signature="982:1053" ph="{...}" />
-            <marker date="1567476949159" expanded="true" signature="1132:1204" ph="{...}" />
-            <marker date="1567476949159" expanded="true" signature="1323:2533" ph="{...}" />
-            <marker date="1567476949159" expanded="true" signature="1380:2093" ph="{...}" />
-            <marker date="1567476949159" expanded="true" signature="1411:1747" ph="/* var cappMaker = new CappMAker(); ... */" />
-            <marker date="1567476949159" expanded="true" signature="1805:2079" ph="{...}" />
-            <marker date="1567476949159" expanded="true" signature="2154:2484" ph="{...}" />
-            <marker date="1567476949159" expanded="true" signature="2227:2470" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CoffeeMachine/DrinkMaker.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="45">
+          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
           <folding>
-            <marker date="1567478226303" expanded="true" signature="23:242" ph="{...}" />
-            <marker date="1567478226303" expanded="true" signature="58:240" ph="{...}" />
+            <marker date="1567487696856" expanded="true" signature="23:117" ph="{...}" />
+            <marker date="1567487696856" expanded="true" signature="58:115" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CoffeeMachine/Capp.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+        <state relative-caret-position="105">
+          <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
           <folding>
-            <marker date="1567478605704" expanded="true" signature="23:189" ph="{...}" />
-            <marker date="1567478605704" expanded="true" signature="59:187" ph="{...}" />
-            <marker date="1567478605704" expanded="true" signature="104:162" ph="{...}" />
-            <marker date="1567478605704" expanded="true" signature="192:313" ph="/* interface IPen ... */" />
+            <marker date="1567483501251" expanded="true" signature="23:170" ph="{...}" />
+            <marker date="1567483501251" expanded="true" signature="59:168" ph="{...}" />
+            <marker date="1567483501251" expanded="true" signature="104:162" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CoffeeMachine/Beverage.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="30">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
           <folding>
-            <marker date="1567478605702" expanded="true" signature="23:456" ph="{...}" />
-            <marker date="1567478605702" expanded="true" signature="73:454" ph="{...}" />
-            <marker date="1567478605702" expanded="true" signature="117:160" ph="{...}" />
-            <marker date="1567478605702" expanded="true" signature="372:448" ph="{...}" />
+            <marker date="1567483501249" expanded="true" signature="23:155" ph="{...}" />
+            <marker date="1567483501249" expanded="true" signature="60:153" ph="{...}" />
+            <marker date="1567483501249" expanded="true" signature="104:147" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CoffeeMachine/LatteMaker.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+          <folding>
+            <marker date="1567489193843" expanded="true" signature="23:283" ph="{...}" />
+            <marker date="1567489193843" expanded="true" signature="67:281" ph="{...}" />
+            <marker date="1567489193843" expanded="true" signature="168:275" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CoffeeMachine/CoffeeMachine.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1025">
+          <caret line="85" column="55" selection-start-line="85" selection-start-column="33" selection-end-line="85" selection-end-column="55" />
+          <folding>
+            <marker date="1567489387232" expanded="true" signature="6:47" ph="..." />
+            <marker date="1567489387232" expanded="true" signature="72:3020" ph="{...}" />
+            <marker date="1567489387232" expanded="true" signature="105:3018" ph="{...}" />
+            <marker date="1567489387232" expanded="true" signature="459:675" ph="{...}" />
+            <marker date="1567489387232" expanded="true" signature="718:1267" ph="{...}" />
+            <marker date="1567489387232" expanded="true" signature="806:900" ph="{...}" />
+            <marker date="1567489387232" expanded="true" signature="996:1067" ph="{...}" />
+            <marker date="1567489387232" expanded="true" signature="1146:1218" ph="{...}" />
+            <marker date="1567489387232" expanded="true" signature="1337:2794" ph="{...}" />
+            <marker date="1567489387232" expanded="true" signature="1394:2234" ph="{...}" />
+            <marker date="1567489387232" expanded="true" signature="1512:1782" ph="/* var cappMaker = new CapMaker(); ... */" />
+            <marker date="1567489387232" expanded="true" signature="1876:2220" ph="{...}" />
+            <marker date="1567489387232" expanded="true" signature="2295:2745" ph="{...}" />
+            <marker date="1567489387232" expanded="true" signature="2419:2731" ph="{...}" />
+            <marker date="1567489387232" expanded="true" signature="2863:3011" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CoffeeMachine/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="20" lean-forward="true" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+          <folding>
+            <marker date="1567489790982" expanded="true" signature="38:1706" ph="{...}" />
+            <marker date="1567489790982" expanded="true" signature="58:1704" ph="{...}" />
+            <marker date="1567489790982" expanded="true" signature="104:1698" ph="{...}" />
+            <marker date="1567489790982" expanded="true" signature="255:939" ph="{...}" />
+            <marker date="1567489790982" expanded="true" signature="457:821" ph="{...}" />
+            <marker date="1567489790982" expanded="true" signature="842:925" ph="{...}" />
+            <marker date="1567489790982" expanded="true" signature="943:1688" ph="/* if (Int32.TryParse(answer, out int theChoice)) ... */" />
           </folding>
         </state>
       </provider>

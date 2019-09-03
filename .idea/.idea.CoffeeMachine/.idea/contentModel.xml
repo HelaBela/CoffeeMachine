@@ -10,12 +10,14 @@
       <e p="CoffeeMachine" t="IncludeRecursive">
         <e p="Beverage.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="CapMaker.cs" t="Include" />
         <e p="Capp.cs" t="Include" />
         <e p="CoffeeMachine.cs" t="Include" />
         <e p="CoffeeMachine.csproj" t="IncludeRecursive" />
         <e p="DrinkMaker.cs" t="Include" />
         <e p="DrinkTypes.cs" t="Include" />
         <e p="Latte.cs" t="Include" />
+        <e p="LatteMaker.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.2" t="Include">
@@ -24,6 +26,7 @@
           </e>
         </e>
         <e p="Program.cs" t="Include" />
+        <e p="Recipe.cs" t="Include" />
       </e>
       <e p="CoffeeMachine.sln" t="IncludeFlat" />
       <e p="CoffeMachineTests" t="IncludeRecursive">
