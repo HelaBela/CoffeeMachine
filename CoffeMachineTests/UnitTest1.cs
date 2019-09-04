@@ -99,11 +99,11 @@ namespace Tests
             var coffeeMachine = new CoffeeMachine.CoffeeMachine(true, 14, 20, 4, 10);
 
             coffeeMachine.MakeBeverage(BeverageTypes.Capp);
-
-            Assert.AreEqual(2, coffeeMachine.CoffeeBeans);
-            Assert.AreEqual(19.7, coffeeMachine.Water);
-            Assert.AreEqual(3.9, coffeeMachine.Milk);
-            Assert.AreEqual(9, coffeeMachine.Chocolate);
+            
+            Ingredients remainingIngredients = new Ingredients(2, 19.7, 3.9, 9);
+            
+            Assert.IsTrue(coffeeMachine.hasIngredients(remainingIngredients));
+            //anotjher wayof testing would be to set up in a way that the inital machine can make 10 caps, and check if after making one cap it can still make 9 more 
         }
         
         [Test]

@@ -16,6 +16,7 @@
         <e p="CoffeeMachine.cs" t="Include" />
         <e p="CoffeeMachine.csproj" t="IncludeRecursive" />
         <e p="IBeverageMaker.cs" t="Include" />
+        <e p="Ingredients.cs" t="Include" />
         <e p="Latte.cs" t="Include" />
         <e p="LatteMaker.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">

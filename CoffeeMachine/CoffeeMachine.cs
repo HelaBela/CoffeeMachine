@@ -6,22 +6,18 @@ namespace CoffeeMachine
 {
     public class CoffeeMachine
     {
-        public int CoffeeBeans { get; set; }
-        public double Water { get; set; }
-        public double Milk { get; set; }
-        public int Chocolate { get; set; }
+        private Ingredients _ingredients;
 
         public bool Power { get; }
         private List<IBeverageMaker> _beverageMakers = new List<IBeverageMaker>();
 
+        // make _beverageMakers into private Dictionary<>
+
 
         public CoffeeMachine(bool power, int coffeeBeans, double water, double milk, int chocolate)
         {
-            CoffeeBeans = coffeeBeans;
-            Water = water;
-            Milk = milk;
+            _ingredients = new Ingredients(coffeeBeans, water, milk, chocolate);
             Power = power;
-            Chocolate = chocolate;
             _beverageMakers.Add(new CappMaker());
             _beverageMakers.Add(new LatteMaker());
         }
@@ -38,8 +34,12 @@ namespace CoffeeMachine
             {
                 var recipe = maker.GetRecipe();
 
-                if (Water >= recipe.Water && CoffeeBeans >= recipe.CoffeeBeans && Milk >= recipe.Milk &&
-                    Chocolate >= recipe.Chocolate)
+
+                if (_ingredients.GreaterThan(recipe.Ingredients)) //recepie should be internal to the maker. 
+                    // this way we are breaking tell dont aks and encapsulation coz recepie is secret. 
+
+                    //canMake (bevarageType, coffee machine's ingr) on maker. And pass ingrediets. 
+
                 {
                     menu.Add(maker.BeverageType);
                 }
@@ -51,6 +51,23 @@ namespace CoffeeMachine
 
         public Beverage MakeBeverage(BeverageTypes beverageType)
         {
+            IBeverageMaker maker = FindBeverageMaker(beverageType);
+
+            if (GetMenu().Contains(beverageType) && maker != null)
+            {
+                var beverage = maker.MakeBeverage();
+                _ingredients.ReduceBy(maker.GetRecipe().Ingredients);
+                return beverage;
+
+                // make a method on maker to getingredients so that the recepie can remain private to maker. 
+                //shouldnt ask recepei from the maker
+            }
+
+            return null;
+        }
+
+        private IBeverageMaker FindBeverageMaker(BeverageTypes beverageType)
+        {
             IBeverageMaker maker = null;
             foreach (var beverageMaker in _beverageMakers)
             {
@@ -61,28 +78,16 @@ namespace CoffeeMachine
                 }
             }
 
-
-            if (GetMenu().Contains(beverageType) && maker != null)
-            {
-                var beverage = maker.MakeBeverage();
-                DeductResourcesAfterCoffeeIsDone(maker.GetRecipe());
-                return beverage;
-            }
-
-            return null;
+            return maker;
         }
-        
-        
-        //handle what happens if we dont have resources 
-        
-        //refill the coffeeMachine
 
-        private void DeductResourcesAfterCoffeeIsDone(Recipe recipe)
+
+        //handle what happens if we dont have resources 
+
+        //refill the coffeeMachine
+        public bool? hasIngredients(Ingredients remainingIngredients)
         {
-            Water -= recipe.Water;
-            CoffeeBeans -= recipe.CoffeeBeans;
-            Milk -= recipe.Milk;
-            Chocolate -= recipe.Chocolate;
+            return _ingredients.isEqual(remainingIngredients);
         }
     }
 }

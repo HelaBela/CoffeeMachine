@@ -25,14 +25,24 @@ namespace CoffeeMachine
                     counter++;
                 }
 
-                var answer = Console.ReadLine();
+                var answer = Console.ReadLine(); //could i use the same?
 
                 if (Int32.TryParse(answer, out int theChoice))
                 {
                     var beverageType = menu[theChoice - 1];
                     Console.WriteLine($"You selected {beverageType}. Now preparing...");
+                    Console.WriteLine($"Your {beverageType} is ready. Do you like it?");
+                    var likeDislikeAnswer = Console.ReadLine();
                     var beverage = firstCoffeeMachine.MakeBeverage(beverageType);
-                    Console.WriteLine(beverage.Throw());
+
+                    if (likeDislikeAnswer == "yes")
+                    {
+                        Console.WriteLine(beverage.Drink());
+                    }
+                    else
+                    {
+                        Console.WriteLine(beverage.Throw());
+                    }
                 }
                 else
                 {
@@ -40,15 +50,13 @@ namespace CoffeeMachine
                 }
 
                 Console.WriteLine("What do you want to do: choose '1' to get the menu and '2' to exit");
-
                 choice = Console.ReadLine();
             }
 
             Console.WriteLine("Bye!");
         }
-        
+
         //what if user puts 6
-        //give a user an option to throw away. beverage.Throw
         //refill the coffeeMachine
     }
 }

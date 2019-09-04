@@ -11,7 +11,7 @@ namespace CoffeeMachine
 
         public Recipe GetRecipe()
         {
-            return new Recipe(12, 0.2, 0.2, 0);
+            return new Recipe(new Ingredients(12, 0.2, 0.2, 0));
         }
     }
 }
