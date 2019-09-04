@@ -42,7 +42,7 @@ namespace Tests
             var coffeeMachine = new CoffeeMachine.CoffeeMachine(true, 22, 3, 4, 5);
 
 
-            Assert.Contains(BeverageTypes.Capp, coffeeMachine.GetMenu());
+            Assert.Contains(BeverageType.Capp, coffeeMachine.GetMenu());
         }
 
         [Test]
@@ -50,7 +50,7 @@ namespace Tests
         {
             var coffeeMachine = new CoffeeMachine.CoffeeMachine(true, 2, 3, 4, 5);
 
-            Assert.IsFalse(coffeeMachine.GetMenu().Contains(BeverageTypes.Capp));
+            Assert.IsFalse(coffeeMachine.GetMenu().Contains(BeverageType.Capp));
         }
 
         [Test]
@@ -58,7 +58,7 @@ namespace Tests
         {
             var coffeeMachine = new CoffeeMachine.CoffeeMachine(true, 12, 0, 4, 5);
 
-            Assert.IsFalse(coffeeMachine.GetMenu().Contains(BeverageTypes.Capp));
+            Assert.IsFalse(coffeeMachine.GetMenu().Contains(BeverageType.Capp));
         }
 
         [Test]
@@ -66,7 +66,7 @@ namespace Tests
         {
             var coffeeMachine = new CoffeeMachine.CoffeeMachine(true, 12, 3, 0, 5);
 
-            Assert.IsFalse(coffeeMachine.GetMenu().Contains(BeverageTypes.Capp));
+            Assert.IsFalse(coffeeMachine.GetMenu().Contains(BeverageType.Capp));
         }
 
         [Test]
@@ -74,7 +74,7 @@ namespace Tests
         {
             var coffeeMachine = new CoffeeMachine.CoffeeMachine(true, 12, 3, 4, 0);
 
-            Assert.IsFalse(coffeeMachine.GetMenu().Contains(BeverageTypes.Capp));
+            Assert.IsFalse(coffeeMachine.GetMenu().Contains(BeverageType.Capp));
         }
         
         [Test]
@@ -82,7 +82,7 @@ namespace Tests
         {
             var coffeeMachine = new CoffeeMachine.CoffeeMachine(true, 14, 3, 4, 10);
 
-            Assert.IsNotNull(coffeeMachine.MakeBeverage(BeverageTypes.Capp));
+            Assert.IsNotNull(coffeeMachine.MakeBeverage(BeverageType.Capp));
         }
         
         [Test]
@@ -90,7 +90,7 @@ namespace Tests
         {
             var coffeeMachine = new CoffeeMachine.CoffeeMachine(true, 14, 0, 4, 10);
 
-            Assert.IsNull(coffeeMachine.MakeBeverage(BeverageTypes.Capp));
+            Assert.IsNull(coffeeMachine.MakeBeverage(BeverageType.Capp));
         }
         
         [Test]
@@ -98,11 +98,12 @@ namespace Tests
         {
             var coffeeMachine = new CoffeeMachine.CoffeeMachine(true, 14, 20, 4, 10);
 
-            coffeeMachine.MakeBeverage(BeverageTypes.Capp);
+            coffeeMachine.MakeBeverage(BeverageType.Capp);
             
             Ingredients remainingIngredients = new Ingredients(2, 19.7, 3.9, 9);
             
             Assert.IsTrue(coffeeMachine.hasIngredients(remainingIngredients));
+            
             //anotjher wayof testing would be to set up in a way that the inital machine can make 10 caps, and check if after making one cap it can still make 9 more 
         }
         
@@ -112,7 +113,7 @@ namespace Tests
             var coffeeMachine = new CoffeeMachine.CoffeeMachine(true, 22, 3, 4, 5);
 
 
-            Assert.Contains(BeverageTypes.Latte, coffeeMachine.GetMenu());
+            Assert.Contains(BeverageType.Latte, coffeeMachine.GetMenu());
         }
         
         [Test]
@@ -120,7 +121,7 @@ namespace Tests
         {
             var coffeeMachine = new CoffeeMachine.CoffeeMachine(true, 14, 3, 4, 10);
 
-            Assert.IsNotNull(coffeeMachine.MakeBeverage(BeverageTypes.Latte));
+            Assert.IsNotNull(coffeeMachine.MakeBeverage(BeverageType.Latte));
         }
 
         

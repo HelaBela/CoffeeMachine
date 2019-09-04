@@ -9,22 +9,21 @@ namespace CoffeeMachine
         private Ingredients _ingredients;
 
         public bool Power { get; }
-        private List<IBeverageMaker> _beverageMakers = new List<IBeverageMaker>();
 
-        // make _beverageMakers into private Dictionary<>
-
+        private Dictionary<BeverageType, IBeverageMaker> _beverageMakers =
+            new Dictionary<BeverageType, IBeverageMaker>();
 
         public CoffeeMachine(bool power, int coffeeBeans, double water, double milk, int chocolate)
         {
             _ingredients = new Ingredients(coffeeBeans, water, milk, chocolate);
             Power = power;
-            _beverageMakers.Add(new CappMaker());
-            _beverageMakers.Add(new LatteMaker());
+            _beverageMakers.Add(BeverageType.Capp, new CappMaker());
+            _beverageMakers.Add(BeverageType.Latte, new LatteMaker());
         }
 
-        public List<BeverageTypes> GetMenu()
+        public List<BeverageType> GetMenu()
         {
-            var menu = new List<BeverageTypes>();
+            var menu = new List<BeverageType>();
             if (Power != true)
             {
                 throw new Exception("come back later. no power");
@@ -32,16 +31,9 @@ namespace CoffeeMachine
 
             foreach (var maker in _beverageMakers)
             {
-                var recipe = maker.GetRecipe();
-
-
-                if (_ingredients.GreaterThan(recipe.Ingredients)) //recepie should be internal to the maker. 
-                    // this way we are breaking tell dont aks and encapsulation coz recepie is secret. 
-
-                    //canMake (bevarageType, coffee machine's ingr) on maker. And pass ingrediets. 
-
+                if (maker.Value.CanMake(_ingredients))
                 {
-                    menu.Add(maker.BeverageType);
+                    menu.Add(maker.Key);
                 }
             }
 
@@ -49,38 +41,19 @@ namespace CoffeeMachine
         }
 
 
-        public Beverage MakeBeverage(BeverageTypes beverageType)
+        public Beverage MakeBeverage(BeverageType beverageType)
         {
-            IBeverageMaker maker = FindBeverageMaker(beverageType);
+            IBeverageMaker maker = _beverageMakers[beverageType];
 
             if (GetMenu().Contains(beverageType) && maker != null)
             {
                 var beverage = maker.MakeBeverage();
-                _ingredients.ReduceBy(maker.GetRecipe().Ingredients);
+                _ingredients.ReduceBy(maker.GetIngredients());
                 return beverage;
-
-                // make a method on maker to getingredients so that the recepie can remain private to maker. 
-                //shouldnt ask recepei from the maker
             }
 
             return null;
         }
-
-        private IBeverageMaker FindBeverageMaker(BeverageTypes beverageType)
-        {
-            IBeverageMaker maker = null;
-            foreach (var beverageMaker in _beverageMakers)
-            {
-                if (beverageMaker.BeverageType == beverageType)
-                {
-                    maker = beverageMaker;
-                    break;
-                }
-            }
-
-            return maker;
-        }
-
 
         //handle what happens if we dont have resources 
 

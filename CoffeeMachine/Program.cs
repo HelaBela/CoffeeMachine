@@ -8,7 +8,7 @@ namespace CoffeeMachine
         {
             Console.WriteLine("welcome to the coffee world");
 
-            Console.WriteLine("What do you want to do: choose '1' to get the menu and '2' to exit");
+            Console.WriteLine("What do you want to do: choose '1' to get the menu and '2' to refill and '3' to exit");
             var choice = Console.ReadLine();
 
 
@@ -25,7 +25,7 @@ namespace CoffeeMachine
                     counter++;
                 }
 
-                var answer = Console.ReadLine(); //could i use the same?
+                var answer = Console.ReadLine();
 
                 if (Int32.TryParse(answer, out int theChoice))
                 {

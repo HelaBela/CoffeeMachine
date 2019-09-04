@@ -9,7 +9,7 @@
     <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="CoffeeMachine" t="IncludeRecursive">
         <e p="Beverage.cs" t="Include" />
-        <e p="BeverageTypes.cs" t="Include" />
+        <e p="BeverageType.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Capp.cs" t="Include" />
         <e p="CappMaker.cs" t="Include" />
