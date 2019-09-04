@@ -1,6 +1,6 @@
 namespace CoffeeMachine
 {
-    public enum DrinkTypes
+    public enum BeverageTypes
     {
         Capp,
         Latte,

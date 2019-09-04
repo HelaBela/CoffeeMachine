@@ -2,10 +2,13 @@ namespace CoffeeMachine
 {
     public abstract class Beverage
     {
-        public virtual string Drink()
+        public abstract string Drink();
+
+        public string Throw() //shared logic, advantage of the abstract class
         {
-            return "";
+            return "Yuck I hate it!";
         }
+        
     }
 }
 

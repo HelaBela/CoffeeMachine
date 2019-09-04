@@ -1,14 +1,17 @@
 namespace CoffeeMachine
 {
-    public class LatteMaker : IDrinkMaker
+    public class LatteMaker : IBeverageMaker
     {
+        public BeverageTypes BeverageType => BeverageTypes.Latte;
 
-        public Recipe LatteRecipe;
-        
-        public Beverage Make(Recipe coffeeRecipe)
+        public Beverage MakeBeverage()
         {
-           LatteRecipe = new Recipe(12, 0.2 ,0.2 ,0 ); 
-           return new Latte();
+            return new Latte();
+        }
+
+        public Recipe GetRecipe()
+        {
+            return new Recipe(12, 0.2, 0.2, 0);
         }
     }
 }

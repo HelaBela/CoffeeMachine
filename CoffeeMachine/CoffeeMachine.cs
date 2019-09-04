@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CoffeeMachine
 {
@@ -11,8 +12,7 @@ namespace CoffeeMachine
         public int Chocolate { get; set; }
 
         public bool Power { get; }
-
-        //public  Drink Menu { get; }
+        private List<IBeverageMaker> _beverageMakers = new List<IBeverageMaker>();
 
 
         public CoffeeMachine(bool power, int coffeeBeans, double water, double milk, int chocolate)
@@ -22,89 +22,67 @@ namespace CoffeeMachine
             Milk = milk;
             Power = power;
             Chocolate = chocolate;
-            //  Menu = menu;
-            
-
+            _beverageMakers.Add(new CappMaker());
+            _beverageMakers.Add(new LatteMaker());
         }
 
-        public List<DrinkTypes> GetMenu()
+        public List<BeverageTypes> GetMenu()
         {
-            var menu = new List<DrinkTypes>();
+            var menu = new List<BeverageTypes>();
             if (Power != true)
             {
                 throw new Exception("come back later. no power");
             }
-            
 
-            if (Water >= 0.3 && CoffeeBeans >= 12 && Milk >= 0.1 && Chocolate>=1)
+            foreach (var maker in _beverageMakers)
             {
-                menu.Add(DrinkTypes.Capp);
-            }
-            
-            if (Water >= 0.2 && CoffeeBeans >= 12 && Milk >= 0.2)
-            {
-                menu.Add(DrinkTypes.Latte);
+                var recipe = maker.GetRecipe();
+
+                if (Water >= recipe.Water && CoffeeBeans >= recipe.CoffeeBeans && Milk >= recipe.Milk &&
+                    Chocolate >= recipe.Chocolate)
+                {
+                    menu.Add(maker.BeverageType);
+                }
             }
 
-            
             return menu;
         }
-        
 
-        public Beverage MakeBeverage(DrinkTypes drinkTypes)
+
+        public Beverage MakeBeverage(BeverageTypes beverageType)
         {
-            if (drinkTypes == DrinkTypes.Capp)
+            IBeverageMaker maker = null;
+            foreach (var beverageMaker in _beverageMakers)
             {
-                var cappMaker = new CapMaker();
-                
-                                      //  var cappMaker = new CapMaker();
-                                     //  var recipe = cappMaker.getRecipe()
-                                    //  check if you have enough ingredients for the recipe -
-                                   //  if yes, then make, else, 
-                                   
-
-                if (GetMenu().Contains(DrinkTypes.Capp))
+                if (beverageMaker.BeverageType == beverageType)
                 {
-                    var recipe = cappMaker.CappRecepie;  
-                    var cap = cappMaker.Make(recipe);
-                    Water -= 0.3;
-                    CoffeeBeans -= 12;
-                    Chocolate -= 1;
-                    Milk -= 0.1;
-                    
-
-                    return cap;
+                    maker = beverageMaker;
+                    break;
                 }
             }
-            
-            if (drinkTypes == DrinkTypes.Latte)
+
+
+            if (GetMenu().Contains(beverageType) && maker != null)
             {
-                var latteMaker = new LatteMaker();
-
-                if (GetMenu().Contains(DrinkTypes.Latte))
-                {
-                    var recipe = latteMaker.LatteRecipe;
-                    var latte = latteMaker.Make(recipe);
-                    Water -= 0.2;
-                    CoffeeBeans -= 12;
-                    Milk -= 0.2;
-                    
-
-                    return latte;
-                }
+                var beverage = maker.MakeBeverage();
+                DeductResourcesAfterCoffeeIsDone(maker.GetRecipe());
+                return beverage;
             }
-            
 
             return null;
         }
+        
+        
+        //handle what happens if we dont have resources 
+        
+        //refill the coffeeMachine
 
-        public void DeductResourcesAfterCoffeeIsDone(Recipe recipe)
+        private void DeductResourcesAfterCoffeeIsDone(Recipe recipe)
         {
             Water -= recipe.Water;
             CoffeeBeans -= recipe.CoffeeBeans;
             Milk -= recipe.Milk;
-            
+            Chocolate -= recipe.Chocolate;
         }
-
     }
 }
