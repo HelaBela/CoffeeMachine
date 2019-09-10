@@ -2,6 +2,12 @@ namespace CoffeeMachine
 {
     public class Ingredients
     {
+        
+        
+        public int CoffeeBeans { get; set; } // remove setter so that the maker cant change the ingredeints/. encapsulation rule
+        public double Water { get; set; }
+        public double Milk { get; set; }
+        public int Chocolate { get; set; }
         public Ingredients(int coffeeBeans, double water, double milk, int chocolate)
         {
             CoffeeBeans = coffeeBeans;
@@ -10,15 +16,14 @@ namespace CoffeeMachine
             Chocolate = chocolate;
         }
 
-        public int CoffeeBeans { get; set; } // remove setter so that the maker cant change the ingredeints/. encapsulation rule
-        public double Water { get; set; }
-        public double Milk { get; set; }
-        public int Chocolate { get; set; }
-
         public bool GreaterThan(Ingredients recipeIngredients)
         {
-            return Water>= recipeIngredients.Water && CoffeeBeans>= recipeIngredients.CoffeeBeans && Milk>= recipeIngredients.Milk && Chocolate>= recipeIngredients.Chocolate;
+            if (Water>= recipeIngredients.Water && CoffeeBeans>= recipeIngredients.CoffeeBeans && Milk>= recipeIngredients.Milk && Chocolate>= recipeIngredients.Chocolate) return true;
+            else
+                return false;
         }
+        
+       
 
         public void ReduceBy(Ingredients recipeIngredients)
         {

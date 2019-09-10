@@ -48,16 +48,13 @@ namespace CoffeeMachine
             if (GetMenu().Contains(beverageType) && maker != null)
             {
                 var beverage = maker.MakeBeverage();
-                _ingredients.ReduceBy(maker.GetIngredients());
+                _ingredients.ReduceBy(maker.GetIngredientsForAnUnit());
                 return beverage;
             }
-
+          
             return null;
         }
-
-        //handle what happens if we dont have resources 
-
-        //refill the coffeeMachine
+        
         public bool? hasIngredients(Ingredients remainingIngredients)
         {
             return _ingredients.isEqual(remainingIngredients);

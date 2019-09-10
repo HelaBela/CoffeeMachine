@@ -14,10 +14,12 @@ namespace CoffeeMachine
 
             while (choice == "1")
             {
-                var firstCoffeeMachine = new CoffeeMachine(true, 20, 10, 10, 50);
+                var firstCoffeeMachine = new CoffeeMachine(true, 0, 10, 10, 50);
                 var menu = firstCoffeeMachine.GetMenu();
+                
                 var counter = 1;
                 Console.WriteLine("Choose a drink from the menu:");
+                
                 foreach (var drink in menu)
                 {
                     Console.WriteLine($"{counter}: {drink}");

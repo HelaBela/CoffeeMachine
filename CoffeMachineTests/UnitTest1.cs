@@ -123,6 +123,23 @@ namespace Tests
 
             Assert.IsNotNull(coffeeMachine.MakeBeverage(BeverageType.Latte));
         }
+        
+        [Test]
+        public void CanGetLatteWhenCantMakeCap()
+        {
+            var coffeeMachine = new CoffeeMachine.CoffeeMachine(true, 24, 3, 4, 1);
+
+            Assert.Contains(BeverageType.Latte, coffeeMachine.GetMenu());
+            Assert.Contains(BeverageType.Capp, coffeeMachine.GetMenu());
+
+            Assert.IsNotNull( coffeeMachine.MakeBeverage(BeverageType.Capp));
+            
+            Assert.Contains(BeverageType.Latte, coffeeMachine.GetMenu());
+            Assert.IsFalse(coffeeMachine.GetMenu().Contains(BeverageType.Capp));
+            Assert.IsNotNull( coffeeMachine.MakeBeverage(BeverageType.Latte));
+            
+        }
+
 
         
     }

@@ -3,7 +3,7 @@ namespace CoffeeMachine
     public interface IBeverageMaker
     {
         Beverage MakeBeverage();
-        Ingredients GetIngredients();
+        Ingredients GetIngredientsForAnUnit();
 
         bool CanMake(Ingredients ingredients);
     }

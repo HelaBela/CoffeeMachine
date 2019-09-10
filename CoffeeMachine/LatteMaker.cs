@@ -7,14 +7,14 @@ namespace CoffeeMachine
             return new Latte();
         }
 
-        public Ingredients GetIngredients()
+        public Ingredients GetIngredientsForAnUnit()
         {
             return new Ingredients(12, 0.2, 0.2, 0);
         }
 
         public bool CanMake(Ingredients ingredients)
         {
-            return ingredients.GreaterThan(GetIngredients());
+            return ingredients.GreaterThan(GetIngredientsForAnUnit());
 
         }
     }

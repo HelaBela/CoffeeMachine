@@ -1,13 +1,17 @@
+using System.Collections.Generic;
+
 namespace CoffeeMachine
 {
-    public class Recipe
+    public abstract class Recipe
     {
         public Recipe(Ingredients ingredients)
         {
             Ingredients = ingredients;
+            Steps = new List<IStep>();
         }
 
         public Ingredients Ingredients { get; }
+        public List<IStep> Steps { get; }
         
 
     }

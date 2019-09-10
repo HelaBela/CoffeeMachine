@@ -2,19 +2,31 @@ namespace CoffeeMachine
 {
     public class CappMaker : IBeverageMaker
     {
+        private Recipe _recipe;
+
+        public CappMaker()
+        {
+            _recipe = new CappRecepie( new Ingredients(12, 0.3, 0.1, 1));
+        }
+
         public Beverage MakeBeverage()
         {
+            foreach (var step in _recipe.Steps)
+            {
+                step.Execute();
+            }
             return new Capp();
         }
 
-        public Ingredients GetIngredients()
+        public Ingredients GetIngredientsForAnUnit()
         {
-            return new Ingredients(12, 0.3, 0.1, 1);
+            return _recipe.Ingredients;
         }
 
         public bool CanMake(Ingredients ingredients)
         {
-            return ingredients.GreaterThan(GetIngredients());
+            return ingredients.GreaterThan(GetIngredientsForAnUnit());
         }
+        
     }
 }
