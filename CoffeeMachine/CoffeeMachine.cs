@@ -6,7 +6,9 @@ namespace CoffeeMachine
 {
     public class CoffeeMachine
     {
-        private Ingredients _ingredients;
+        private readonly Ingredients _ingredients;
+
+        private readonly Refiller _refiller;
 
         public bool Power { get; }
 
@@ -19,6 +21,7 @@ namespace CoffeeMachine
             Power = power;
             _beverageMakers.Add(BeverageType.Capp, new CappMaker());
             _beverageMakers.Add(BeverageType.Latte, new LatteMaker());
+            _refiller = new Refiller();
         }
 
         public List<BeverageType> GetMenu()
@@ -51,13 +54,18 @@ namespace CoffeeMachine
                 _ingredients.ReduceBy(maker.GetIngredientsForAnUnit());
                 return beverage;
             }
-          
+
             return null;
         }
-        
+
         public bool? hasIngredients(Ingredients remainingIngredients)
         {
             return _ingredients.isEqual(remainingIngredients);
+        }
+
+        public void RefillMachine()
+        {
+            _refiller.Refill(_ingredients, 20, 20, 20, 20);
         }
     }
 }

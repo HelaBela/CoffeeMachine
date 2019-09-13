@@ -8,57 +8,63 @@ namespace CoffeeMachine
         {
             Console.WriteLine("welcome to the coffee world");
 
-            Console.WriteLine("What do you want to do: choose '1' to get the menu and '2' to refill and '3' to exit");
-            var choice = Console.ReadLine();
+            var firstCoffeeMachine = new CoffeeMachine(true, 12, 10, 10, 0);
+            
+            var choice = Prompt();
 
-
-            while (choice == "1")
+            while (choice != "3")
             {
-                var firstCoffeeMachine = new CoffeeMachine(true, 0, 10, 10, 50);
-                var menu = firstCoffeeMachine.GetMenu();
-                
-                var counter = 1;
-                Console.WriteLine("Choose a drink from the menu:");
-                
-                foreach (var drink in menu)
+                if (choice == "1")
                 {
-                    Console.WriteLine($"{counter}: {drink}");
+                    var menu = firstCoffeeMachine.GetMenu();
 
-                    counter++;
-                }
+                    Console.WriteLine("Choose a drink from the menu:");
 
-                var answer = Console.ReadLine();
-
-                if (Int32.TryParse(answer, out int theChoice))
-                {
-                    var beverageType = menu[theChoice - 1];
-                    Console.WriteLine($"You selected {beverageType}. Now preparing...");
-                    Console.WriteLine($"Your {beverageType} is ready. Do you like it?");
-                    var likeDislikeAnswer = Console.ReadLine();
-                    var beverage = firstCoffeeMachine.MakeBeverage(beverageType);
-
-                    if (likeDislikeAnswer == "yes")
+                    var counter = 1;
+                    foreach (var drink in menu)
                     {
-                        Console.WriteLine(beverage.Drink());
+                        Console.WriteLine($"{counter}: {drink}");
+
+                        counter++;
+                    }
+
+                    if (int.TryParse(Console.ReadLine(), out var theChoice))
+                    {
+                        var beverageType = menu[theChoice - 1];
+                        Console.WriteLine($"You selected {beverageType}. Now preparing...");
+                        var beverage = firstCoffeeMachine.MakeBeverage(beverageType);
+                        Console.WriteLine($"Your {beverageType} is ready. Do you like it?");
+                        var likeDislikeAnswer = Console.ReadLine();
+
+                        if (likeDislikeAnswer == "yes")
+                        {
+                            Console.WriteLine(beverage.Drink());
+                        }
+                        else
+                        {
+                            Console.WriteLine(beverage.Throw());
+                        }
                     }
                     else
                     {
-                        Console.WriteLine(beverage.Throw());
+                        Console.WriteLine($"{Console.ReadLine()} is not a number!");
                     }
                 }
-                else
+                else if (choice == "2")
                 {
-                    Console.WriteLine($"{answer} is not a number!");
+                    firstCoffeeMachine.RefillMachine();
                 }
-
-                Console.WriteLine("What do you want to do: choose '1' to get the menu and '2' to exit");
-                choice = Console.ReadLine();
+                choice=Prompt();
             }
 
             Console.WriteLine("Bye!");
         }
 
-        //what if user puts 6
-        //refill the coffeeMachine
+        private static string Prompt()
+        {
+            Console.WriteLine(
+                "What do you want to do: choose '1' to get the menu and '2' to refill and '3' to exit");
+          return Console.ReadLine();
+        }
     }
 }

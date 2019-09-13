@@ -6,7 +6,7 @@ namespace CoffeeMachine
 
         public CappMaker()
         {
-            _recipe = new CappRecepie( new Ingredients(12, 0.3, 0.1, 1));
+            _recipe = new CappRecipe( new Ingredients(12, 0.3, 0.1, 1));
         }
 
         public Beverage MakeBeverage()
