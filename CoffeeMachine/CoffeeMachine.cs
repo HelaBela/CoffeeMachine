@@ -25,12 +25,14 @@ namespace CoffeeMachine
             _beverageMakers.Add(BeverageType.HotChoc, new ChocolteMaker());
             _beverageMakers.Add(BeverageType.Espresso, new EspressoMaker());
             _beverageMakers.Add(BeverageType.Mocca, new MoccaMaker());
+            _beverageMakers.Add(BeverageType.Tea, new TeamMaker());
             _refiller = new Refiller();
         }
 
         public List<BeverageType> GetMenu()
         {
             var menu = new List<BeverageType>();
+            var outOfMenu = new List<BeverageType>();
             if (Power != true)
             {
                 throw new Exception("come back later. no power");
@@ -46,6 +48,26 @@ namespace CoffeeMachine
 
             return menu;
         }
+        
+        public List<BeverageType> GetOutOfOrderMenu()
+        {
+            var outOfMenu = new List<BeverageType>();
+            if (Power != true)
+            {
+                throw new Exception("come back later. no power");
+            }
+
+            foreach (var maker in _beverageMakers)
+            {
+                if (!maker.Value.CanMake(_ingredients))
+                {
+                    outOfMenu.Add(maker.Key);
+                }
+            }
+
+            return outOfMenu;
+        }
+
 
 
         public Beverage MakeBeverage(BeverageType beverageType)
