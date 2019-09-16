@@ -4,7 +4,7 @@ namespace CoffeeMachine
     {
         
         
-        public int CoffeeBeans { get; set; } // remove setter so that the maker cant change the ingredeints/. encapsulation rule
+        public int CoffeeBeans { get; set; } 
         public double Water { get; set; }
         public double Milk { get; set; }
         public int Chocolate { get; set; }

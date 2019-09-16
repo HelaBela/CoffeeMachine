@@ -1,12 +1,13 @@
 namespace CoffeeMachine
 {
-    public class LatteMaker : IBeverageMaker
+    public class TeamMaker : IBeverageMaker
+
     {
         private Recipe _recipe;
-        
-        public LatteMaker()
+
+        public TeamMaker()
         {
-            _recipe = new CappRecipe( new Ingredients(12, 0.2, 0.2, 0));
+            _recipe = new TeaRecipe(new Ingredients(0, 0.4, 0, 0));
         }
 
         public Beverage MakeBeverage()
@@ -16,20 +17,17 @@ namespace CoffeeMachine
                 step.Execute();
             }
 
-            return new Latte();
+            return new Tea();
         }
-        
 
         public Ingredients GetIngredientsForAnUnit()
         {
             return _recipe.Ingredients;
         }
-        
 
         public bool CanMake(Ingredients ingredients)
         {
             return ingredients.GreaterThan(GetIngredientsForAnUnit());
-
         }
     }
 }

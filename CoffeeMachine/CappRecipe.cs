@@ -2,6 +2,7 @@ using System.Collections.Generic;
 
 namespace CoffeeMachine
 {
+    
     public class CappRecipe: Recipe
     {
 

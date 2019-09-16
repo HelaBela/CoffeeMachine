@@ -21,6 +21,10 @@ namespace CoffeeMachine
             Power = power;
             _beverageMakers.Add(BeverageType.Capp, new CappMaker());
             _beverageMakers.Add(BeverageType.Latte, new LatteMaker());
+            _beverageMakers.Add(BeverageType.LongBlack, new LongBlackMaker());
+            _beverageMakers.Add(BeverageType.HotChoc, new ChocolteMaker());
+            _beverageMakers.Add(BeverageType.Espresso, new EspressoMaker());
+            _beverageMakers.Add(BeverageType.Mocca, new MoccaMaker());
             _refiller = new Refiller();
         }
 

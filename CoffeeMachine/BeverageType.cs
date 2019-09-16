@@ -8,7 +8,6 @@ namespace CoffeeMachine
         Espresso,
         Mocca,
         HotChoc,
-        HotMilk,
         Tea
 
     }
