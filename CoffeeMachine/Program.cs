@@ -20,9 +20,12 @@ namespace CoffeeMachine
                     Console.WriteLine("Choose a drink from the menu:");
 
                     PrintMenu();
-                    if (int.TryParse(Console.ReadLine(), out var theChoice))
+                    
+                    var result2 = int.TryParse(Console.ReadLine(), out var theChoice1);
+
+                    if (result2 && theChoice1 < menu.Count)
                     {
-                        var beverageType = menu[theChoice - 1];
+                        var beverageType = menu[theChoice1 - 1];
                         Console.WriteLine($"You selected {beverageType}. Now preparing...");
                         var beverage = firstCoffeeMachine.MakeBeverage(beverageType);
                         Console.WriteLine($"Your {beverageType} is ready. Do you like it?");
@@ -36,9 +39,7 @@ namespace CoffeeMachine
                         {
                             Console.WriteLine(beverage.Throw());
                         }
-                    }
-                    else if (theChoice > menu.Count)
-                    {
+                    
                         Console.WriteLine("choose a valid number");
                     }
                     else
