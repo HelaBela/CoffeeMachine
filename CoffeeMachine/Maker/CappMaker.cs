@@ -6,7 +6,7 @@ namespace CoffeeMachine
 
         public CappMaker()
         {
-            _recipe = new CappRecipe( new Ingredients(12, 0.3, 0.1, 1));
+            _recipe = new CappRecipe( new Ingredients.Ingredients(12, 0.3, 0.1, 1));
         }
 
         public Beverage MakeBeverage()
@@ -18,12 +18,12 @@ namespace CoffeeMachine
             return new Capp();
         }
 
-        public Ingredients GetIngredientsForAnUnit()
+        public Ingredients.Ingredients GetIngredientsForAnUnit()
         {
             return _recipe.Ingredients;
         }
 
-        public bool CanMake(Ingredients ingredients)
+        public bool CanMake(Ingredients.Ingredients ingredients)
         {
             return ingredients.GreaterThan(GetIngredientsForAnUnit());
         }

@@ -6,7 +6,7 @@ namespace CoffeeMachine
 
         public EspressoMaker()
         {
-            _recipe= new EspressoRecipe(new Ingredients(12,0.2,0, 0));
+            _recipe= new EspressoRecipe(new Ingredients.Ingredients(12,0.2,0, 0));
         }
 
         public Beverage MakeBeverage()
@@ -19,12 +19,12 @@ namespace CoffeeMachine
             return new Espresso();
         }
 
-        public Ingredients GetIngredientsForAnUnit()
+        public Ingredients.Ingredients GetIngredientsForAnUnit()
         {
             return _recipe.Ingredients;
         }
 
-        public bool CanMake(Ingredients ingredients)
+        public bool CanMake(Ingredients.Ingredients ingredients)
         {
             return ingredients.GreaterThan(GetIngredientsForAnUnit());
         }

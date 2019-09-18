@@ -3,8 +3,8 @@ namespace CoffeeMachine
     public interface IBeverageMaker
     {
         Beverage MakeBeverage();
-        Ingredients GetIngredientsForAnUnit();
+        Ingredients.Ingredients GetIngredientsForAnUnit();
 
-        bool CanMake(Ingredients ingredients);
+        bool CanMake(Ingredients.Ingredients ingredients);
     }
 }

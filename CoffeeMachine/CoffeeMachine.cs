@@ -1,23 +1,22 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace CoffeeMachine
 {
     public class CoffeeMachine
     {
-        private readonly Ingredients _ingredients;
+        private readonly Ingredients.Ingredients _ingredients;
 
-        private readonly Refiller _refiller;
+        private readonly IRefiller.IRefiller _refiller;
 
         public bool Power { get; }
 
         private Dictionary<BeverageType, IBeverageMaker> _beverageMakers =
             new Dictionary<BeverageType, IBeverageMaker>();
 
-        public CoffeeMachine(bool power, int coffeeBeans, double water, double milk, int chocolate)
+        public CoffeeMachine(bool power, int coffeeBeans, double water, double milk, int chocolate, IRefiller.IRefiller refiller)
         {
-            _ingredients = new Ingredients(coffeeBeans, water, milk, chocolate);
+            _ingredients = new Ingredients.Ingredients(coffeeBeans, water, milk, chocolate);
             Power = power;
             _beverageMakers.Add(BeverageType.Capp, new CappMaker());
             _beverageMakers.Add(BeverageType.Latte, new LatteMaker());
@@ -26,7 +25,7 @@ namespace CoffeeMachine
             _beverageMakers.Add(BeverageType.Espresso, new EspressoMaker());
             _beverageMakers.Add(BeverageType.Mocca, new MoccaMaker());
             _beverageMakers.Add(BeverageType.Tea, new TeamMaker());
-            _refiller = new Refiller();
+            _refiller = refiller;
         }
 
         public List<BeverageType> GetMenu()
@@ -84,14 +83,14 @@ namespace CoffeeMachine
             return null;
         }
 
-        public bool? hasIngredients(Ingredients remainingIngredients)
+        public bool? hasIngredients(Ingredients.Ingredients remainingIngredients)
         {
             return _ingredients.isEqual(remainingIngredients);
         }
 
         public void RefillMachine()
         {
-            _refiller.Refill(_ingredients, 20, 20, 20, 20);
+            _ingredients.Add(_refiller.Refill(20, 20, 20, 20));
         }
     }
 }

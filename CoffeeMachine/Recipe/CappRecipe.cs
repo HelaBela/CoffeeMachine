@@ -6,7 +6,7 @@ namespace CoffeeMachine
     public class CappRecipe: Recipe
     {
 
-        public CappRecipe(Ingredients ingredients) : base(ingredients)
+        public CappRecipe(Ingredients.Ingredients ingredients) : base(ingredients)
         {
             Steps.Add(new PourWaterStep(ingredients.Water));
             Steps.Add(new PourMilkStep(ingredients.Milk));

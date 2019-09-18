@@ -2,7 +2,7 @@ namespace CoffeeMachine
 {
     public class MoccaRecipe: Recipe 
     {
-        public MoccaRecipe(Ingredients ingredients) : base(ingredients)
+        public MoccaRecipe(Ingredients.Ingredients ingredients) : base(ingredients)
         {
             Steps.Add(new GrindCoffee(ingredients.CoffeeBeans));
             Steps.Add(new AddChocolate(ingredients.Chocolate));

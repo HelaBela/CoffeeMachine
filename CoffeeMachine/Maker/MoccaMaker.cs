@@ -6,7 +6,7 @@ namespace CoffeeMachine
 
         public MoccaMaker()
         {
-            _recipe = new MoccaRecipe(new Ingredients(12, 0.3, 0.1, 5));
+            _recipe = new MoccaRecipe(new Ingredients.Ingredients(12, 0.3, 0.1, 5));
         }
 
         public Beverage MakeBeverage()
@@ -19,12 +19,12 @@ namespace CoffeeMachine
             return new Mocca();
         }
 
-        public Ingredients GetIngredientsForAnUnit()
+        public Ingredients.Ingredients GetIngredientsForAnUnit()
         {
             return _recipe.Ingredients;
         }
 
-        public bool CanMake(Ingredients ingredients)
+        public bool CanMake(Ingredients.Ingredients ingredients)
         {
             return ingredients.GreaterThan(GetIngredientsForAnUnit());
         }

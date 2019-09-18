@@ -7,7 +7,7 @@ namespace CoffeeMachine
 
         public TeamMaker()
         {
-            _recipe = new TeaRecipe(new Ingredients(0, 0.4, 0, 0));
+            _recipe = new TeaRecipe(new Ingredients.Ingredients(0, 0.4, 0, 0));
         }
 
         public Beverage MakeBeverage()
@@ -20,12 +20,12 @@ namespace CoffeeMachine
             return new Tea();
         }
 
-        public Ingredients GetIngredientsForAnUnit()
+        public Ingredients.Ingredients GetIngredientsForAnUnit()
         {
             return _recipe.Ingredients;
         }
 
-        public bool CanMake(Ingredients ingredients)
+        public bool CanMake(Ingredients.Ingredients ingredients)
         {
             return ingredients.GreaterThan(GetIngredientsForAnUnit());
         }

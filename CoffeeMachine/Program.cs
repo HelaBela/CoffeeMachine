@@ -7,8 +7,9 @@ namespace CoffeeMachine
         static void Main(string[] args)
         {
             Console.WriteLine("welcome to the coffee world");
+            var refiller = new Refiller.SolarRefiller();
 
-            var firstCoffeeMachine = new CoffeeMachine(true, 12, 10, 10, 0);
+            var firstCoffeeMachine = new CoffeeMachine(true, 12, 10, 10, 0, refiller);
 
             var choice = Prompt();
             var menu = firstCoffeeMachine.GetMenu();

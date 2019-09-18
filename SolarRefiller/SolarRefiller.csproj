@@ -3,11 +3,12 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>netcoreapp2.2</TargetFramework>
+        <RootNamespace>Refiller</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Ingredients\Ingredients.csproj" />
-      <ProjectReference Include="..\SolarRefiller\SolarRefiller.csproj" />
+      <ProjectReference Include="..\IRefiller\IRefiller.csproj" />
     </ItemGroup>
 
 </Project>

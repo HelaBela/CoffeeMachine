@@ -16,15 +16,15 @@ namespace CoffeeMachine
 
         public LongBlackMaker()
         {
-            _recipe = new LongBlackRecipe(new Ingredients(12, 0.4, 0, 0) );
+            _recipe = new LongBlackRecipe(new Ingredients.Ingredients(12, 0.4, 0, 0) );
         }
 
-        public Ingredients GetIngredientsForAnUnit()
+        public Ingredients.Ingredients GetIngredientsForAnUnit()
         {
            return _recipe.Ingredients;
         }
 
-        public bool CanMake(Ingredients ingredients)
+        public bool CanMake(Ingredients.Ingredients ingredients)
         {
             return ingredients.GreaterThan(GetIngredientsForAnUnit());
         }

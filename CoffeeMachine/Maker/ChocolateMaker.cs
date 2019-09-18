@@ -6,7 +6,7 @@ namespace CoffeeMachine
 
         public ChocolteMaker()
         {
-            _recipe = new ChocolateRecipe(new Ingredients(0,0,0.4,7));
+            _recipe = new ChocolateRecipe(new Ingredients.Ingredients(0,0,0.4,7));
         }
 
         public Beverage MakeBeverage()
@@ -19,12 +19,12 @@ namespace CoffeeMachine
             return  new HotChocolate();
         }
 
-        public Ingredients GetIngredientsForAnUnit()
+        public Ingredients.Ingredients GetIngredientsForAnUnit()
         {
             return _recipe.Ingredients;
         }
 
-        public bool CanMake(Ingredients ingredients)
+        public bool CanMake(Ingredients.Ingredients ingredients)
         {
             return ingredients.GreaterThan(GetIngredientsForAnUnit());
         }

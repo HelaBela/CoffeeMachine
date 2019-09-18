@@ -1,4 +1,4 @@
-namespace CoffeeMachine
+namespace Ingredients
 {
     public class Ingredients
     {
@@ -35,6 +35,14 @@ namespace CoffeeMachine
 
         public bool isEqual(Ingredients remainingIngredients)
         {return Water == remainingIngredients.Water && CoffeeBeans == remainingIngredients.CoffeeBeans && Milk == remainingIngredients.Milk && Chocolate == remainingIngredients.Chocolate;
+        }
+
+        public void Add(Ingredients ingredientsToRefill)
+        {
+            CoffeeBeans += ingredientsToRefill.CoffeeBeans;
+            Water += ingredientsToRefill.Water;
+            Chocolate += ingredientsToRefill.Chocolate;
+            Milk += ingredientsToRefill.Milk;
         }
     }
 }
