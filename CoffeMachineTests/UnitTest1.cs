@@ -11,7 +11,7 @@ namespace Tests
     public class CoffeeMachineTests
     {
         private IRefiller.IRefiller refiller;
-        
+
         [SetUp]
         public void Setup()
         {
@@ -28,7 +28,8 @@ namespace Tests
         [Test]
         public void CanNotGetMenuWhenThereIsNoPower()
         {
-            var coffeeMachine = new CoffeeMachine.CoffeeMachine(false, 2, 3, 4, 5, new ElectricRefiller.ElectricRefiller());
+            var coffeeMachine =
+                new CoffeeMachine.CoffeeMachine(false, 2, 3, 4, 5, new ElectricRefiller.ElectricRefiller());
 
 
             Assert.Throws<Exception>(() => coffeeMachine.GetMenu());
@@ -83,7 +84,7 @@ namespace Tests
 
             Assert.IsFalse(coffeeMachine.GetMenu().Contains(BeverageType.Capp));
         }
-        
+
         [Test]
         public void CanMakeCapp()
         {
@@ -91,7 +92,7 @@ namespace Tests
 
             Assert.IsNotNull(coffeeMachine.MakeBeverage(BeverageType.Capp));
         }
-        
+
         [Test]
         public void CanNotMakeCappWithoutWater()
         {
@@ -99,20 +100,20 @@ namespace Tests
 
             Assert.IsNull(coffeeMachine.MakeBeverage(BeverageType.Capp));
         }
-        
+
         [Test]
         public void CanSubstractFromCoffeeMachingWhenCapIsMAde()
         {
             var coffeeMachine = new CoffeeMachine.CoffeeMachine(true, 14, 20, 4, 10, refiller);
 
             coffeeMachine.MakeBeverage(BeverageType.Capp);
-            
-           global::Ingredients.Ingredients remainingIngredients = new global::Ingredients.Ingredients(2, 19.7, 3.9, 9);
-            
+
+            global::Ingredients.Ingredients remainingIngredients = new global::Ingredients.Ingredients(2, 19.7, 3.9, 9);
+
             Assert.IsTrue(coffeeMachine.hasIngredients(remainingIngredients));
-            
+
         }
-        
+
         [Test]
         public void CanGetLatteInMenuWhenIngredientsAreAvailable()
         {
@@ -121,7 +122,7 @@ namespace Tests
 
             Assert.Contains(BeverageType.Latte, coffeeMachine.GetMenu());
         }
-        
+
         [Test]
         public void CanMakeLatte()
         {
@@ -129,7 +130,7 @@ namespace Tests
 
             Assert.IsNotNull(coffeeMachine.MakeBeverage(BeverageType.Latte));
         }
-        
+
         [Test]
         public void CanGetLatteWhenCantMakeCap()
         {
@@ -138,59 +139,69 @@ namespace Tests
             Assert.Contains(BeverageType.Latte, coffeeMachine.GetMenu());
             Assert.Contains(BeverageType.Capp, coffeeMachine.GetMenu());
 
-            Assert.IsNotNull( coffeeMachine.MakeBeverage(BeverageType.Capp));
-            
+            Assert.IsNotNull(coffeeMachine.MakeBeverage(BeverageType.Capp));
+
             Assert.Contains(BeverageType.Latte, coffeeMachine.GetMenu());
             Assert.IsFalse(coffeeMachine.GetMenu().Contains(BeverageType.Capp));
-            Assert.IsNotNull( coffeeMachine.MakeBeverage(BeverageType.Latte));
-            
+            Assert.IsNotNull(coffeeMachine.MakeBeverage(BeverageType.Latte));
+
         }
 
         [Test]
         public void CanRefillWithRefillerThatSupportsRefilling()
         {
-            
+
             // Arrange:
             // Create the fake Refiller:
 
-           IRefiller.IRefiller newRefiller = new RefillerStub();
+            IRefiller.IRefiller newRefiller = new RefillerStub();
 
-           var coffeeMachine = new CoffeeMachine.CoffeeMachine(true, 24, 3, 4, 1, newRefiller);
+            var coffeeMachine = new CoffeeMachine.CoffeeMachine(true, 24, 3, 4, 1, newRefiller);
 
-           Assert.Contains(BeverageType.Latte, coffeeMachine.GetMenu());
-           Assert.Contains(BeverageType.Capp, coffeeMachine.GetMenu());
+            Assert.Contains(BeverageType.Latte, coffeeMachine.GetMenu());
+            Assert.Contains(BeverageType.Capp, coffeeMachine.GetMenu());
 
-           Assert.IsNotNull( coffeeMachine.MakeBeverage(BeverageType.Capp));
-            
-           Assert.Contains(BeverageType.Latte, coffeeMachine.GetMenu());
-           Assert.IsFalse(coffeeMachine.GetMenu().Contains(BeverageType.Capp));
-           Assert.IsNotNull( coffeeMachine.MakeBeverage(BeverageType.Latte));
-           
-           coffeeMachine.RefillMachine();
-           
-           Assert.Contains(BeverageType.Latte, coffeeMachine.GetMenu());
-           Assert.Contains(BeverageType.Capp, coffeeMachine.GetMenu());
-           
+            Assert.IsNotNull(coffeeMachine.MakeBeverage(BeverageType.Capp));
+
+            Assert.Contains(BeverageType.Latte, coffeeMachine.GetMenu());
+            Assert.IsFalse(coffeeMachine.GetMenu().Contains(BeverageType.Capp));
+            Assert.IsNotNull(coffeeMachine.MakeBeverage(BeverageType.Latte));
+
+            coffeeMachine.RefillMachine();
+
+            Assert.Contains(BeverageType.Latte, coffeeMachine.GetMenu());
+            Assert.Contains(BeverageType.Capp, coffeeMachine.GetMenu());
+
         }
-        
-        
+
+
         [Test]
         public void CanNotRefillWhenIngredientsAreNegativeNumbers()
         {
             
-            // Arrange:
-            // Create the fake Refiller:
-
             IRefiller.IRefiller newRefiller = new RefillerMock();
 
             var coffeeMachine = new CoffeeMachine.CoffeeMachine(true, 10, 3, 4, 1, newRefiller);
 
             coffeeMachine.RefillMachine();
-           
+
             Assert.IsFalse(coffeeMachine.GetMenu().Contains(BeverageType.Capp));
-           
+
         }
-        
-        //make your machine resistant for bad refillers, when the refiller has negative numbers - write test and then improve code
+
+        [Test]
+        public void CanResistABadRefillerThatChangesIngredientsIntoNegatives()
+        {
+
+            IRefiller.IRefiller newRefiller = new BadRefillerStub();
+
+            var coffeeMachine = new CoffeeMachine.CoffeeMachine(true, 24, 3, 4, 1, newRefiller);
+
+            Assert.Throws<Exception>(() => coffeeMachine.RefillMachine());
+            
+        }
+
     }
 }
+
+// make a stub of bad reffiler and make the machine resist that bad refiler. 

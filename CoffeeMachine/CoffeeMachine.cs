@@ -90,7 +90,9 @@ namespace CoffeeMachine
 
         public void RefillMachine()
         {
-            _ingredients.Add(_refiller.Refill(-20, 20, 20, 20));
+            
+            
+            _ingredients.Add(_refiller.Refill(20, 20, 20, 20));
         }
     }
 }

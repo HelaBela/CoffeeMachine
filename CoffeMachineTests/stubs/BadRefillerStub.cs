@@ -1,14 +1,10 @@
-
-
 namespace Tests.stubs
 {
-    public class RefillerStub: IRefiller.IRefiller
+    public class BadRefillerStub: IRefiller.IRefiller
     {
         public Ingredients.Ingredients Refill(double water, double milk, int coffee, int chocolate)
-        
         {
-            return new Ingredients.Ingredients(coffee, water, milk, chocolate);
+            return new Ingredients.Ingredients(-10,-10,-10,-10);
         }
-        
     }
 }
