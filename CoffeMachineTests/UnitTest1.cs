@@ -203,5 +203,3 @@ namespace Tests
 
     }
 }
-
-// make a stub of bad reffiler and make the machine resist that bad refiler. 
