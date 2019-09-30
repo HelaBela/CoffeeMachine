@@ -48,7 +48,7 @@ namespace CoffeeMachine
             return menu;
         }
         
-        public List<BeverageType> GetOutOfOrderMenu()
+        public List<BeverageType> GetUnavailableMenu()
         {
             var outOfMenu = new List<BeverageType>();
             if (Power != true)

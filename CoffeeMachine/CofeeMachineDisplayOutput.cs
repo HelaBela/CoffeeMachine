@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using CoffeeMachine.Utility;
 using Refiller;
 
@@ -17,104 +18,97 @@ namespace CoffeeMachine
 
         public void RunOutput()
         {
-            
-            var choice = Prompt();
+            Console.WriteLine("welcome to the coffee world");
+
             var menu = _coffeeMachine.GetMenu();
 
-            while (choice != "3")
+            var refill = "r";
+            var exit = "e";
+
+            Console.WriteLine("Here is your menu:");
+
+            PrintMenu();
+            PrintUnavailableMenu();
+
+            var choice = Choice();
+            while (choice != exit)
             {
-                if (HasUserChosenMenu(choice))
+                if (choice != refill)
                 {
-                    Console.WriteLine("Choose a drink from the menu:");
-
-                    PrintMenu();
-                    
-                    var result2 = int.TryParse(Console.ReadLine(), out var theChoice1);
-
-                    if (result2 && theChoice1 < menu.Count)
-                    {
-                        var beverageType = menu[theChoice1 - 1];
-                        Console.WriteLine($"You selected {beverageType}. Now preparing...");
-                        var beverage = _coffeeMachine.MakeBeverage(beverageType);
-                        Console.WriteLine($"Your {beverageType} is ready. Do you like it?");
-                        var likeDislikeAnswer = Console.ReadLine();
-
-                        if (likeDislikeAnswer == "yes")
-                        {
-                            Console.WriteLine(beverage.Drink());
-                        }
-                        else
-                        {
-                            Console.WriteLine(beverage.Throw());
-                        }
-                    
-                        Console.WriteLine("choose a valid number");
-                    }
-                    else
-                    {
-                        Console.WriteLine($"{Console.ReadLine()} is not a number!");
-                    }
+                    MakeTheBeverage(menu);
                 }
-                else if (choice == "2")
+                else
+                {
+                    _coffeeMachine.RefillMachine();
+                    Console.WriteLine("Machine is refilled. Here is your new menu:");
+                    PrintMenu();
+                }
+
+                if (choice == refill)
                 {
                     _coffeeMachine.RefillMachine();
                 }
-                else if (choice != "1" || choice != "2")
-                {
-                    Console.WriteLine("please choose a valid option.");
-                }
-
-                choice = Prompt();
             }
 
             Console.WriteLine("Bye!");
+        }
 
-            void PrintMenu()
+        private static string Choice()
+        {
+            Console.WriteLine("Choose a drink, type 'r' to refill or 'e' to exit.");
+
+            var choice = Console.ReadLine();
+            return choice;
+        }
+
+        private void MakeTheBeverage(List<BeverageType> menu)
+        {
+            var drinkChoice = int.TryParse(Console.ReadLine(), out var theDrink);
+            if (theDrink < menu.Count)
             {
-                var menuOutOfOrder = _coffeeMachine.GetOutOfOrderMenu();
-                menu = _coffeeMachine.GetMenu();
-                var counter = 1;
-                foreach (var drink in menu)
-                {
-                    Console.WriteLine($"{counter}: {drink}");
+                var beverageType = menu[theDrink - 1];
+                Console.WriteLine($"You selected {beverageType}. Now preparing...");
+                var beverage = _coffeeMachine.MakeBeverage(beverageType);
+                Console.WriteLine($"Your {beverageType} is ready. Do you like it?");
 
-                    counter++;
+                if (Console.ReadLine() == "yes")
+                {
+                    Console.WriteLine(beverage.Drink());
                 }
-
-                if (menuOutOfOrder.Count != 0)
+                else
                 {
-                    Console.WriteLine("Not available at the moment: ");
-
-                    foreach (var drink in menuOutOfOrder)
-                    {
-                        Console.WriteLine($" -> {drink}");
-                    }
-
-                    Console.WriteLine(
-                        "If you like to refill the machine and have all drinks available type 'refill' else choose a drink from the menu.");
-
-                    if (Console.ReadLine() == "refill")
-                    {
-                        _coffeeMachine.RefillMachine();
-
-                        Console.WriteLine("Here is your new menu:");
-                        PrintMenu();
-                    }
+                    Console.WriteLine(beverage.Throw());
                 }
             }
-        }
-        
-        private static string Prompt()
-        {
-            Console.WriteLine(
-                "What do you want to do: choose '1' to get the menu and '2' to refill and '3' to exit");
-            return Console.ReadLine();
+            else
+            {
+                Console.WriteLine($"{Console.ReadLine()} is not a valid answer!");
+            }
+
+           
         }
 
-        private bool HasUserChosenMenu(string choice)
+        void PrintMenu()
         {
-            return choice == "1";
+            var menu = _coffeeMachine.GetMenu();
+            var counter = 1;
+            foreach (var drink in menu)
+            {
+                Console.WriteLine($"{counter}: {drink}");
+
+                counter++;
+            }
         }
-        
+
+        void PrintUnavailableMenu()
+        {
+            var unavailableMenu = _coffeeMachine.GetUnavailableMenu();
+            Console.WriteLine("Not available at the moment: ");
+
+            foreach (var drink in unavailableMenu)
+            {
+                Console.WriteLine(drink);
+            }
+        }
     }
 }

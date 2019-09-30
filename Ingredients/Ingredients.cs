@@ -42,15 +42,15 @@ namespace Ingredients
         public void Add(Ingredients ingredientsToRefill)
         {
             if (ingredientsToRefill.Chocolate > 0 && ingredientsToRefill.CoffeeBeans > 0 &&
-                ingredientsToRefill.Milk > 0 && ingredientsToRefill.Water > 0)
-            {
-
-                CoffeeBeans += ingredientsToRefill.CoffeeBeans;
-                Water += ingredientsToRefill.Water;
-                Chocolate += ingredientsToRefill.Chocolate;
-                Milk += ingredientsToRefill.Milk;
-
-            }
+                             ingredientsToRefill.Milk > 0 && ingredientsToRefill.Water > 0)
+                         {
+             
+                             CoffeeBeans += ingredientsToRefill.CoffeeBeans;
+                             Water += ingredientsToRefill.Water;
+                             Chocolate += ingredientsToRefill.Chocolate;
+                             Milk += ingredientsToRefill.Milk;
+             
+                         }
             else
             {
                 throw new Exception("Ingredients are negative.  Can't refill.");
