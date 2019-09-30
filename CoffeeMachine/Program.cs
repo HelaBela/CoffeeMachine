@@ -14,9 +14,9 @@ namespace CoffeeMachine
 
             var consoleServices = new ConsoleOperations();
             
-            var displayOutput = new CofeeMachineDisplayOutput(consoleServices, firstCoffeeMachine);
+            var displayOutput = new CofeeMachineScreen(consoleServices, firstCoffeeMachine);
             
-            displayOutput.RunOutput();
+            displayOutput.Interact();
 
         }
 

@@ -2,7 +2,7 @@ namespace CoffeeMachine.Utility
 {
     public interface IOConsoleService
     {
-        void DisplayOutput(string content);
-        string ReadUserInput();
+        void Write(string content);
+        string Read();
     }
 }

@@ -4,12 +4,12 @@ namespace CoffeeMachine.Utility
 {
     class ConsoleOperations : IOConsoleService
     {
-        public void DisplayOutput(string content)
+        public void Write(string content)
         {
             Console.WriteLine(content);
         }
 
-        public string ReadUserInput()
+        public string Read()
         {
             return Console.ReadLine();
         }
