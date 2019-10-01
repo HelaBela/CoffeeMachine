@@ -33,6 +33,7 @@ namespace CoffeeMachine
             {
                 choice = HandleChoice(choice);
             }
+
             _iOConsoleService.Write("Nice interacting with you. Have a nice day :)");
         }
 
@@ -53,10 +54,14 @@ namespace CoffeeMachine
                 _iOConsoleService.Write("Machine is refilled.");
             }
 
-            else if (choice != refill) // choice is a number call the below
+            else if (choice == "1" || choice =="2" || choice == "3" || choice == "4" || choice =="5" || choice =="7" || choice =="6") 
             {
                 MakeTheBeverage(choice);
-            } //else say invalid choice
+            }
+            else
+            {
+                Console.WriteLine("Wrong choice. Try again");
+            }
 
 
             choice = GetChoice();
@@ -66,10 +71,9 @@ namespace CoffeeMachine
 
         private string GetChoice()
         {
-            _iOConsoleService.Write("Choose a drink, type 'm' to see menu or 'r' to refill or 'e' to exit.");
+            _iOConsoleService.Write("Type 'm' to see menu or 'r' to refill or 'e' to exit.");
 
             return _iOConsoleService.Read();
-            
         }
 
         private void MakeTheBeverage(String choice)
@@ -79,7 +83,7 @@ namespace CoffeeMachine
             if (theDrink < menu.Count)
             {
                 var beverageType = menu[theDrink - 1];
-               _iOConsoleService.Write($"You selected {beverageType}. Now preparing...");
+                _iOConsoleService.Write($"You selected {beverageType}. Now preparing...");
                 var beverage = _coffeeMachine.MakeBeverage(beverageType);
                 _iOConsoleService.Write($"Your {beverageType} is ready. Do you like it?");
 
@@ -113,7 +117,11 @@ namespace CoffeeMachine
         void PrintUnavailableMenu()
         {
             var unavailableMenu = _coffeeMachine.GetUnavailableMenu();
-            _iOConsoleService.Write("Not available at the moment: ");
+            if (unavailableMenu.Count > 0)
+            {
+                _iOConsoleService.Write("Not available at the moment: ");
+            }
+
 
             foreach (var drink in unavailableMenu)
             {
@@ -122,4 +130,3 @@ namespace CoffeeMachine
         }
     }
 }
-
