@@ -42,6 +42,7 @@ namespace CoffeeMachine
             var refill = "r";
             var exit = "e";
             var menu = "m";
+
             if (choice == menu)
             {
                 _iOConsoleService.Write("Here is your menu:");
@@ -54,18 +55,26 @@ namespace CoffeeMachine
                 _iOConsoleService.Write("Machine is refilled.");
             }
 
-            else if (choice == "1" || choice =="2" || choice == "3" || choice == "4" || choice =="5" || choice =="7" || choice =="6") 
+            else if (IsValidChoice(choice) < 8)
             {
                 MakeTheBeverage(choice);
             }
             else
             {
-                Console.WriteLine("Wrong choice. Try again");
+                _iOConsoleService.Write("Wrong choice. Try again");
             }
 
 
             choice = GetChoice();
             return choice;
+        }
+
+        private int IsValidChoice(string choice)
+        {
+            if (Int32.TryParse(choice, out int numValue))
+                return numValue;
+            else
+                throw new Exception("Not a number");
         }
 
 
@@ -80,7 +89,7 @@ namespace CoffeeMachine
         {
             var menu = _coffeeMachine.GetMenu();
             int.TryParse(choice, out var theDrink);
-            if (theDrink < menu.Count)
+            if (theDrink <= menu.Count)
             {
                 var beverageType = menu[theDrink - 1];
                 _iOConsoleService.Write($"You selected {beverageType}. Now preparing...");
